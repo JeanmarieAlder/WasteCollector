@@ -8,8 +8,6 @@ h1{
     font-size: 40px;
 }
 
-
-
 #img{
     width: 100%;
     padding: 15px;
@@ -30,7 +28,6 @@ h1{
 }
 
 .logoRS{
-    text-align: left;
     cursor:pointer;
 }
 
@@ -43,6 +40,10 @@ h1{
 
 #btnMenu {
     text-align: right !important;
+    padding: inherit;
 }
 
+alignBtn{
+    margin: 20px;
+}
 
