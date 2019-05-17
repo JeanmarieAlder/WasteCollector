@@ -19,11 +19,11 @@ window.onload = function(){
     }
     
     function clicEvent(){
-        window.open("events.html");
+        window.location.href="events.html";
     }
     
     function clicActeur(){
-        window.onload("index.html");
+        window.location.href="associations.html";
     }
     
 }
