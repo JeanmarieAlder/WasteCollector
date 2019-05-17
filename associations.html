@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <header>
-    <title>Association</title>
+    <title onclick="">Association</title>
     <link rel="stylesheet" href="style/homeStyle.css">
     <link rel="stylesheet" type="text/css" href="style/eventsStyle.css">
     
@@ -10,7 +10,7 @@
 <body>
     
     <div id="menu">
-        <h1>INITIATIVE <br/> REGION <br/> PROPRE</h1>
+        <h1 >INITIATIVE <br/> REGION <br/> PROPRE</h1>
     
         <div id="btnMenu">
             <button id="acteur" class="btn alignBtn">Acteurs</button>
@@ -130,6 +130,14 @@
         for(var i = 0; i < divsToHide.length; i++){
             divsToHide[i].style.display = "none"; 
         }
+        
+        if(selected == "all"){
+            var allDivs = document.getElementsByClassName("Assoc");
+            for(var i = 0; i < allDivs.length; i++){
+            allDivs[i].style.display = ""; 
+            }
+        }
+        
         var divsToShow = document.getElementsByClassName(selected);
         for(var i = 0; i < divsToShow.length; i++){
             divsToShow[i].style.display = ""; 
