@@ -1,5 +1,5 @@
-<link rel="stylesheet" type="text/css" href="style/associationsStyle.css">
-
+<link rel="stylesheet" type="text/css" href="style/eventsStyle.css">
+<h1 align="center">Association</h1>
 
 <FORM>
 <SELECT id="regions" name="region_selected" size="1">
@@ -13,9 +13,9 @@
     
 <button type="button" onclick="showResults()">Valider</button>
 
+
 <div class="container">
   <table class="responsive-table">
-    <caption>Associations</caption>
     <thead>
       <tr>
         <th scope="col">Nom</th>
@@ -32,35 +32,74 @@
         <td data-title="Region">Valais</td>
         <td data-title="Description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </td>
         <td data-title="Website"><a href="https://www.facebook.com/regionpropre/" rel="external">Facebook</a></td>
-        <td data-title="Events">5</td>
+        <td data-title="Events"><a href="#events_list" onclick="showIrpEvents()">2</a></td>
       </tr>
        <tr class="Vaud Assoc">
         <th scope="row">Association pour la Sauvegarde du Léman</th>
         <td data-title="Region">Vaud</td>
         <td data-title="Description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
         <td data-title="Website"><a href="https://asleman.org/fr/" rel="external">Site Web</a></td>
-        <td data-title="Events">2</td>
+        <td data-title="Events"><a href="#events_list" onclick="showAslEvents()">2</a></td>
       </tr>
         <tr class="Valais Assoc">
         <th scope="row">Initiative Région Propre</th>
         <td data-title="Region">Valais</td>
         <td data-title="Description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </td>
         <td data-title="Website"><a href="https://www.facebook.com/regionpropre/" rel="external">Facebook</a></td>
-        <td data-title="Events">5</td>
+        <td data-title="Events"><a href="#events_list" onclick="showIrpEvents()">2</a></td>
       </tr>
        <tr class="Vaud Assoc">
         <th scope="row">Association pour la Sauvegarde du Léman</th>
         <td data-title="Region">Vaud</td>
         <td data-title="Description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
         <td data-title="Website"><a href="https://asleman.org/fr/" rel="external">Site Web</a></td>
-        <td data-title="Events">2</td>
+        <td data-title="Events"><a href="#events_list" onclick="showAslEvents()">2</a></td>
       </tr>
     </tbody>
   </table>
 </div>
+
+<div id="events_list">
+    <h2>Événements :</h2>
+    <div id="irp_events">
+        <table>
+        <tr>
+            <td>Samedi 18.05.2019</td>
+            <td>Nettoyage du canal de Saxon</td>
+            <td>Saxon, Valais</td>
+        </tr>
+        <tr>
+            <td>Dimanche 02.06.2019</td>
+            <td>Nettoyage du canal de Vétroz</td>
+            <td>Vétroz, Valais</td>
+        </tr>
+        </table>
+    </div>
+    <div id="asl_events">
+        <table>
+        <tr>
+            <td>Dimanche 26.05.2019</td>
+            <td>Nettoyage de la plage de Nyon</td>
+            <td>Nyon, Vaud</td>
+        </tr>
+        <tr>
+            <td>Samedi 08.06.2019</td>
+            <td>Nettoyage de la plage de la Lisette</td>
+            <td>Saint-Saphorin, Vaud</td>
+        </tr>
+        </table>
+    </div>
+    
+</div>
     
     
 <script>
+    
+    window.onload = function(){
+        var eventsDiv = document.getElementById("events_list");
+        eventsDiv.style.display = "none";
+    }
+    
     function showResults(){
         var e = document.getElementById("regions");
         var selected = e.options[e.selectedIndex].value;
@@ -72,6 +111,31 @@
         for(var i = 0; i < divsToShow.length; i++){
             divsToShow[i].style.display = ""; 
         }
+        
+    }
+    
+    function showEventsByAssociation()
+    {
+        var eventsDiv = document.getElementById("events_list");
+        eventsDiv.style.display = "";
+    }
+    
+    function showIrpEvents(){
+        showEventsByAssociation();
+        var aslDiv = document.getElementById("asl_events");
+        aslDiv.style.display = "none";
+        
+        var irpDiv = document.getElementById("irp_events");
+        irpDiv.style.display = "";
+        
+    }
+    function showAslEvents(){
+        showEventsByAssociation();
+        var irpDiv = document.getElementById("irp_events");
+        irpDiv.style.display = "none";
+        
+        var aslDiv = document.getElementById("asl_events");
+        aslDiv.style.display = "";
         
     }
 </script>
