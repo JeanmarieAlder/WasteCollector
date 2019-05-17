@@ -1,6 +1,7 @@
 body{
     margin: 0;
     font-family: arial, sans-serif;
+    background-color : #def6a6;
 }
 
 h1{
@@ -47,3 +48,11 @@ alignBtn{
     margin: 20px;
 }
 
+#imgmap{
+    width: 90%;
+    height: 60%;
+}
+
+#demoMockup{
+    align-content: center;
+}
