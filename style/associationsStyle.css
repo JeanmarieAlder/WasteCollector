@@ -1,4 +1,4 @@
-@import "bourbon";
+// @import "bourbon";
 
 // Breakpoints
 $bp-maggie: 15em; 
@@ -224,7 +224,7 @@ a {
       }
       
       @media (min-width: $bp-bart) {
-        // Don’t show data-title labels 
+        // Don’t show data-title labels     
         content: none; 
       }
     } 
