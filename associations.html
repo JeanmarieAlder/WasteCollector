@@ -2,16 +2,16 @@
 
 
 <FORM>
-<SELECT name="nom" size="1">
-<OPTION>lundi
-<OPTION>mardi
-<OPTION>mercredi
-<OPTION>jeudi
-<OPTION>vendredi
+<SELECT id="regions" name="region_selected" size="1">
+    <OPTION value="all">Toutes les régions</OPTION>
+    <OPTION value="Valais">Valais</OPTION>
+    <OPTION value="Vaud">Vaud</OPTION>
+    <OPTION value="Fribourg">Fribourg</OPTION>
+    <OPTION value="Genève">Genève</OPTION>
 </SELECT>
 </FORM>
     
-<button type="button">Valider</button>
+<button type="button" onclick="showResults()">Valider</button>
 
 <div class="container">
   <table class="responsive-table">
@@ -27,28 +27,28 @@
     </thead>
     
     <tbody>
-      <tr>
+      <tr class="Valais Assoc">
         <th scope="row">Initiative Région Propre</th>
         <td data-title="Region">Valais</td>
         <td data-title="Description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </td>
         <td data-title="Website"><a href="https://www.facebook.com/regionpropre/" rel="external">Facebook</a></td>
         <td data-title="Events">5</td>
       </tr>
-       <tr>
+       <tr class="Vaud Assoc">
         <th scope="row">Association pour la Sauvegarde du Léman</th>
         <td data-title="Region">Vaud</td>
         <td data-title="Description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
         <td data-title="Website"><a href="https://asleman.org/fr/" rel="external">Site Web</a></td>
         <td data-title="Events">2</td>
       </tr>
-        <tr>
+        <tr class="Valais Assoc">
         <th scope="row">Initiative Région Propre</th>
         <td data-title="Region">Valais</td>
         <td data-title="Description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </td>
         <td data-title="Website"><a href="https://www.facebook.com/regionpropre/" rel="external">Facebook</a></td>
         <td data-title="Events">5</td>
       </tr>
-       <tr>
+       <tr class="Vaud Assoc">
         <th scope="row">Association pour la Sauvegarde du Léman</th>
         <td data-title="Region">Vaud</td>
         <td data-title="Description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
@@ -58,3 +58,20 @@
     </tbody>
   </table>
 </div>
+    
+    
+<script>
+    function showResults(){
+        var e = document.getElementById("regions");
+        var selected = e.options[e.selectedIndex].value;
+        var divsToHide = document.getElementsByClassName("Assoc");
+        for(var i = 0; i < divsToHide.length; i++){
+            divsToHide[i].style.display = "none"; 
+        }
+        var divsToShow = document.getElementsByClassName(selected);
+        for(var i = 0; i < divsToShow.length; i++){
+            divsToShow[i].style.display = ""; 
+        }
+        
+    }
+</script>
