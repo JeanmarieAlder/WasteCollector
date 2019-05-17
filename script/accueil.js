@@ -1,5 +1,6 @@
 window.onload = function(){
     
+
     var btnInsta = document.getElementById("insta");
     var btnFb = document.getElementById("fb");
     var btnActeur = document.getElementById("acteur");
@@ -38,4 +39,7 @@ window.onload = function(){
         window.location.href="statmap.html";
     }
     
-}
+    var eventsDiv = document.getElementById("events_list");
+    eventsDiv.style.display = "none";
+
+} 

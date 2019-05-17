@@ -56,3 +56,7 @@ alignBtn{
 #demoMockup{
     align-content: center;
 }
+
+td{
+    border: 1px solid black;
+}
